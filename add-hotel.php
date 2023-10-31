@@ -15,10 +15,10 @@ session_start();
 
 <body>
     <?php include'navbar.php';
-    if(isset($_SESSION['succes'])){
+    if(isset($_SESSION['success'])){
         echo" 
-        <div class='flash text-light p-3 bg-dark positionfixed ' style='top:0;right:0'>
-        {$_SESSION['message']}
+        <div class='flash text-light p-3 bg-dark position-fixed' style='top:0;right:0'>
+        {$_SESSION['success']}
 
         </div>
         ";
@@ -34,7 +34,7 @@ session_start();
                 <img width="100%" src="https://www.pchotels.com/asset/welcome-image/pcbhurban.jpg" alt="">
             </div>
             <div class="col-lg-6">
-                <form action="./add.php" method="POST" enctype="multipart/form-data ">
+                <form action="./add.php" method="POST" enctype="multipart/form-data">
                     <label for="">Hotel Name</label>
                     <input class="form-control" type="text" name="name" placeholder="Add a hotel... ">
                     <label for="">Hotel Location</label>

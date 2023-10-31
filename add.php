@@ -13,18 +13,19 @@ $rooms = $_POST['rooms'];
 $fileName = $_FILES['image']['name'];
 $tempName = $_FILES['image']['tmp_name'];
 
-// // Store the image in the local storage
-// move_uploaded_file($tempName, './images/' . $fileName);
+// Store the image in the local storage
+move_uploaded_file($tempName, './images/' . $fileName);
 
-// // Send the data to the database
-// $insert = "INSERT INTO hotel(name, location, price, description, rooms, image) VALUES ('$name', '$location', $price, '$desc', $rooms, '$fileName')";
+// Send the data to the database
+$insert = "INSERT INTO hotel(name, location, price, description, rooms, image) VALUES ('$name', '$location', $price, '$desc', $rooms, '$fileName')";
 
-// // Execute the query
-// mysqli_query($connection, $insert);
+// Execute the query
 
-// // Start a session to store your message
-// $_SESSION['success'] = 'Hotel Added Successfully!!!';
+$result = mysqli_query($connection, $insert);
 
-// // Return back
-// header("Location: {$hostname}/add-hotel.php");
+// Start a session to store your message
+$_SESSION['success'] = 'Hotel Added Successfully!!!';
+
+// Return back
+header("Location: {$hostname}/add-hotel.php");
 ?>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include'boot_css.php';
             ?>
-    <title>Document</title>
+    <title>Hotel</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <?php   include 'navbar.php';?>
     <div class="container">
         <div class="row">
-            <?php include'./config.php';
+    <?php include'./config.php';
             $select="SELECT * FROM hotel";
             $result= mysqli_query($connection, $select);
             if(mysqli_num_rows($result)> 0){
@@ -29,7 +29,7 @@
                     <p>
                         Description:{$row['description']}
                     </p>
-                    <a href='./single-hotel.php?=id={$row['id']}' class='btn btn-info w-50 my-2'>
+                    <a href='./single-hotel.php?id={$row['id']}'class='btn btn-info w-50 my-2'>
                     See More
                     </a >
 
@@ -41,9 +41,6 @@
             ?>
         </div>
     </div>
-
-
-
 
     <?php include'boot_js.php';
             ?>
